@@ -6,8 +6,8 @@
 typedef struct {
     uint32_t   CPSR;
     uint32_t   r[13];
-    uint32_t   sp;  
-    uint32_t   lr;
-    uint8_t*   retPC;
+    uint32_t   sp;      // r[13]
+    uint32_t   lr;      // r[14]  
+    uint8_t*   retPC;   // r[15]
 } SaveRegs;
 #endif
