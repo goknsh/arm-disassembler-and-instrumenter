@@ -85,6 +85,36 @@ It is simpler to disassemble ARM instructions due to the fixed-width alignment s
 
 Your decoder should work for `lab3_fib, lab3_fact, lab3_fact2`. 
 
+* Example output
+
+```asm
+input number: 10
+addr 0x109b8, opcode: 92, len: 4, isCFlow: false
+addr 0x109bc, opcode: 28, len: 4, isCFlow: false
+addr 0x109c0, opcode: 24, len: 4, isCFlow: false
+addr 0x109c4, opcode: 50, len: 4, isCFlow: false
+addr 0x109c8, opcode: 51, len: 4, isCFlow: false
+addr 0x109cc, opcode: 35, len: 4, isCFlow: false
+addr 0x109d0, opcode: a0, len: 4, isCFlow: true
+addr 0x109d4, opcode: 3a, len: 4, isCFlow: false
+addr 0x109d8, opcode: a0, len: 4, isCFlow: true
+addr 0x109dc, opcode: 51, len: 4, isCFlow: false
+addr 0x109e0, opcode: 24, len: 4, isCFlow: false
+addr 0x109e4, opcode: 1a, len: 4, isCFlow: false
+addr 0x109e8, opcode: bf, len: 4, isCFlow: true
+addr 0x109ec, opcode: 1a, len: 4, isCFlow: false
+addr 0x109f0, opcode: 51, len: 4, isCFlow: false
+addr 0x109f4, opcode: 24, len: 4, isCFlow: false
+addr 0x109f8, opcode: 1a, len: 4, isCFlow: false
+addr 0x109fc, opcode: bf, len: 4, isCFlow: true
+addr 0x10a00, opcode: 1a, len: 4, isCFlow: false
+addr 0x10a04, opcode: 8, len: 4, isCFlow: false
+addr 0x10a08, opcode: 1a, len: 4, isCFlow: false
+addr 0x10a0c, opcode: 24, len: 4, isCFlow: false
+addr 0x10a10, opcode: 8b, len: 4, isCFlow: false
+addr 0x10a14, opcode: 12, len: 4, isCFlow: true
+```
+
 ## Lab3-4: Control flow following and program profiling (40 pt)
 
 In this part, you will implement the binary translator that instrument control flow instructions (say `bl`, `bx`, `bgt`, `b`) with callout routines that can introspect the code at runtime. 
