@@ -30,4 +30,4 @@ lab3_fact3: lab3.c arm_callout.S fact3.o
 objs: $(OBJS)
 
 clean:
-	rm -f lab3_fib lab3_fact? *.o *.dis 
+	rm -f lab3_fib lab3_fact lab3_fact? *.o *.dis 
