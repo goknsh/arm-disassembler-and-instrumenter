@@ -26,7 +26,7 @@ fact:
 	pop 	{r0}
 	bl	fact
 	ldr	r1, [sp, #4]            @ 4-byte Reload
-	add	r0, r1, r0
+	mul	r0, r1, r0
 	str	r0, [r11, #-4]
 .LBB0_3:
 	ldr	r0, [r11, #-4]
