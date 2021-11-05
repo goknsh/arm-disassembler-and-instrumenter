@@ -125,9 +125,9 @@ Before running the `user_prog()`, you will first run the `StartProfiling()` func
 (2)  Inside the callout routine, you can emulate the branch operation to determine the next branch choice. You will again follow the instruction stream to find and patch the next control instruction to be executed.
 (3) Unpatch to restore the original control instruction, and return the original callsite to resume the execution.
 
-As you implement the above algorithm, the binary translator will grant you access to the program's runtime context at each branch point regardless of your input. Make sure to have clean-up routine inside `stopProflie()` to unpatch the last instrumentation and stop the instrumentation.
+As you implement the above algorithm, the binary translator will grant you access to the program's runtime context at each branch point regardless of your input. ~~Make sure to have clean-up routine inside `stopProfling()` to unpatch the last instrumentation and stop the instrumentation.~~ You should stop this process when you hit the `StartProfiling()` function.
 
-As for the output, run `lab3_fib` and `lab3_fact` programs with different inputs and check the number of instructions (and basic blocks) executions. For each basic block, your binary translator will dump the instructions in that block in the same format as in Lab3-3. You should stop this process when you hit the `StartProfiling()` function. Create a data structure to capture the start address of each basic block executed and instruction count.
+As for the output, run `lab3_fib` and `lab3_fact` programs with different inputs and check the number of instructions (and basic blocks) executions. For each basic block, your binary translator will dump the instructions in that block in the same format as in Lab3-3. Create a data structure to capture the start address of each basic block executed and instruction count.
 
 ## Lab3-5: Conditional Instructions (30 pt)
 
