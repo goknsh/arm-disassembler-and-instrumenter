@@ -69,7 +69,19 @@ bxCallout:
 @
     .global condCallout
 condCallout:
-    /* IMPLEMENT */
+    push    {sp,lr,pc}
+    push    {r0-r12}
+    mrs     r0, cpsr    /* r0 is scratch, temporarily storing cspr -- control register */
+    push    {r0}
+    mov     r0, sp      /* setting the first arg (*SaveRegs) */
+
+    bl handleCondCallout
+
+    pop     {r0}
+    msr     cpsr, r0
+    pop     {r0-r12}
+    add     sp, sp, #4
+    pop     {lr,pc}
 
 @
 @ For an extra credit assignment
